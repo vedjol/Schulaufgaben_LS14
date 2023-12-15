@@ -9,8 +9,8 @@ import java.util.List;
 import java.util.Stack;
 
 public class RemoteControl extends JPanel {
-    private final int COLUMN_COUNT = 2;
-    private final int GAP = 5;
+    private static final int COLUMN_COUNT = 2;
+    private static final int GAP = 5;
     private final Stack<Command> commandStack = new Stack<>();
     private final List<Command> commands;
 
