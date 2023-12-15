@@ -15,6 +15,8 @@ import aufgaben.remotecontroll.gui.remote.RemoteControl;
 import aufgaben.remotecontroll.receiver.Garage;
 import aufgaben.remotecontroll.receiver.Light;
 import aufgaben.remotecontroll.receiver.StereoSystem;
+import com.formdev.flatlaf.intellijthemes.*;
+import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatArcDarkIJTheme;
 
 import javax.swing.*;
 import java.awt.*;
@@ -22,6 +24,8 @@ import java.awt.*;
 public class RemoteControlFactory {
 
     public static void openBasicRemoteGUI() {
+        FlatArcDarkIJTheme.setup();
+
         //init receiver...
         Garage garage = new Garage();
         Light light = new Light();
