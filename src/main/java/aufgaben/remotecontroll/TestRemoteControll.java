@@ -1,13 +1,16 @@
 package aufgaben.remotecontroll;
 
 import aufgaben.remotecontroll.factory.RemoteControlFactory;
-import aufgaben.remotecontroll.remote.RemoteControl;
+import aufgaben.remotecontroll.gui.remote.RemoteControl;
+
+import javax.swing.*;
 
 public class TestRemoteControll {
     public static void main(String[] args) {
+        JFrame f = new JFrame();
         RemoteControl r = RemoteControlFactory.createBasicRemote();
-
-        r.pressButton(0);
-        //...
+        f.add(r);
+        f.pack();
+        f.setVisible(true);
     }
 }

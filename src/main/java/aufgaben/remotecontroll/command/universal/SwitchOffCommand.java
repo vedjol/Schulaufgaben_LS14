@@ -17,6 +17,11 @@ public class SwitchOffCommand implements Command {
 
 
     @Override
+    public String getName() {
+        return "Switch " + switchable.getClass().getSimpleName() + " off";
+    }
+
+    @Override
     public void execute() {
         switchable.switchOff();
     }

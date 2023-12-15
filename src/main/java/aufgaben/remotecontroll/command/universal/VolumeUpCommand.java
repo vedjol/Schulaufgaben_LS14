@@ -13,8 +13,13 @@ public class VolumeUpCommand implements Command {
 
     private void setSoundChangeable(SoundChangeable soundChangeable) {
         if (soundChangeable == null)
-            throw new IllegalArgumentException("The oundchangable object should never be null");
+            throw new IllegalArgumentException("The soundchangable object should never be null");
         this.soundChangeable = soundChangeable;
+    }
+
+    @Override
+    public String getName() {
+        return "Increase " + soundChangeable.getClass().getSimpleName() + " volume";
     }
 
     @Override

@@ -4,6 +4,7 @@ import aufgaben.remotecontroll.command.util.Command;
 import aufgaben.remotecontroll.receiver.Garage;
 
 public class OpenGarageCommand implements Command {
+    private static final String STANDARD_NAME = "Open garage";
     private Garage garage;
 
     public OpenGarageCommand(Garage garage) {
@@ -15,7 +16,10 @@ public class OpenGarageCommand implements Command {
         this.garage = garage;
     }
 
-
+    @Override
+    public String getName() {
+        return STANDARD_NAME;
+    }
     @Override
     public void execute() {
         garage.open();

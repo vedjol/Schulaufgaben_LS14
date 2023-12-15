@@ -15,7 +15,10 @@ public class SwitchOnCommand implements Command {
         this.switchable = switchable;
     }
 
-
+    @Override
+    public String getName() {
+        return "Switch " + switchable.getClass().getSimpleName() + " on";
+    }
     @Override
     public void execute() {
         switchable.switchOn();

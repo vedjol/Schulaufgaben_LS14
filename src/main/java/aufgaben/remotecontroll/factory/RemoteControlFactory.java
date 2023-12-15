@@ -1,11 +1,17 @@
 package aufgaben.remotecontroll.factory;
 
-import aufgaben.remotecontroll.command.garage.*;
+import aufgaben.remotecontroll.command.garage.CloseGarageCommand;
+import aufgaben.remotecontroll.command.garage.OpenGarageCommand;
 import aufgaben.remotecontroll.command.stereosystem.StartPlayingStereoSystemCommand;
 import aufgaben.remotecontroll.command.stereosystem.StopPlayingStereoSystemCommand;
-import aufgaben.remotecontroll.command.universal.*;
-import aufgaben.remotecontroll.receiver.*;
-import aufgaben.remotecontroll.remote.*;
+import aufgaben.remotecontroll.command.universal.SwitchOffCommand;
+import aufgaben.remotecontroll.command.universal.SwitchOnCommand;
+import aufgaben.remotecontroll.command.universal.VolumeDownCommand;
+import aufgaben.remotecontroll.command.universal.VolumeUpCommand;
+import aufgaben.remotecontroll.gui.remote.RemoteControl;
+import aufgaben.remotecontroll.receiver.Garage;
+import aufgaben.remotecontroll.receiver.Light;
+import aufgaben.remotecontroll.receiver.StereoSystem;
 
 public class RemoteControlFactory {
 
@@ -17,8 +23,8 @@ public class RemoteControlFactory {
 
         //init commands...
         //garage
-        CloseGarageCommand closeGarageCommand = new CloseGarageCommand(garage);
         OpenGarageCommand openGarageCommand = new OpenGarageCommand(garage);
+        CloseGarageCommand closeGarageCommand = new CloseGarageCommand(garage);
         //light
         SwitchOnCommand switchLightOnCommand = new SwitchOnCommand(light);
         SwitchOffCommand switchLightOffCommand = new SwitchOffCommand(light);
@@ -31,8 +37,9 @@ public class RemoteControlFactory {
         VolumeDownCommand volumeDownCommand = new VolumeDownCommand(stereoSystem);
 
         //Add commands and return remote
-        return new RemoteControl(closeGarageCommand,
+        return new RemoteControl(
                 openGarageCommand,
+                closeGarageCommand,
                 switchLightOnCommand,
                 switchLightOffCommand,
                 switchStereoSystemOnCommand,

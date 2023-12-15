@@ -10,7 +10,6 @@ public class CloseGarageCommand implements Command {
         reverseCommand = new OpenGarageCommand(garage);
     }
 
-
     @Override
     public void execute() {
         reverseCommand.undo();
